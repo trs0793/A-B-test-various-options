@@ -1,3 +1,33 @@
+# A-B-test (English)
+### 1) Goal and Task Statement:
+
+During the testing of one hypothesis, a new post recommendation algorithm was applied to the target group, while the control group retained the basic algorithm. The main hypothesis posits that the new algorithm in the 2nd group will lead to an increase in CTR. **My task was to analyze the experiment's outcomes using various methods and make a conclusion about launching the post recommendation algorithm for all users**.
+
+ ### 2) Tools Used:
+ - Python (Pandas, Numpy, Seaborn, Matplotlib, Scipy.stats, Pingouin, Bootstrap libraries)
+ - SQL queries in ClickHouse
+
+ ### 3) Results:
+   
+1) The T-test resulted in a p-value > 0.05 for the regular CTR, suggesting no significant differences, possibly due to the non-normal distribution in the test group.
+
+2) Conversely, the Mann-Whitney test yielded a p-value < 0.05 for the regular CTR, indicating significant differences.
+
+3) The T-test for smoothed CTR produced a p-value of 0.0516, suggesting potential significant differences, likely because of the smoothing effect akin to logarithmic transformation, reducing the standard deviation.
+
+4) The Mann-Whitney test for smoothed CTR continued to highlight significant and considerable differences.
+
+5) Bootstrap analysis indicated intersecting confidence intervals between both groups, implying no statistical disparity.
+
+6) The Poisson bootstrap suggested statistical disparities.
+
+7) The Mann-Whitney test post-Bucket transformation revealed discernible differences.
+
+8) Similarly, the t-test post-Bucket transformation revealed differences.
+
+In most cases, the tests demonstrated statistically significant differences. **Since the CTR decreased in the test group, it is not advisable to launch the new algorithm**. Understanding its cause and rectifying it could significantly improve our algorithm, making it deployable in the future.
+
+
 # A-B-test (Russian)
 ### 1)Цель и условие задачи:
 
